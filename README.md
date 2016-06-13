@@ -8,6 +8,7 @@ Basic implementation of a browser based cricket simulation game in Go and Angula
 
 ## Planned Features
 The following features are planned for the initial version:
+
 1. Public home screen
 2. User login screen, with basic authentication
 3. Random team assigned to new users
