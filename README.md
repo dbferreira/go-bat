@@ -4,7 +4,7 @@ Basic implementation of a browser based cricket simulation game in Go and Angula
 ## Infrastructure
 * The frontend will be implemented using AngularJS 2.0 and styled with Bootstrap.
 * The backend server will be done with Go.
-* The database will be either Couchbase or MongoDB.
+* The database will be MongoDB (https://godoc.org/gopkg.in/mgo.v2).
 
 ## Planned Features
 The following features are planned for the initial version:
