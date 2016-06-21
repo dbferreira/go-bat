@@ -2,38 +2,38 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"gopkg.in/mgo.v2"
+	"gopkg.in/mgo.v2/bson"
+	"log"
 )
 
-import as "github.com/aerospike/aerospike-client-go"
+type Person struct {
+	Name  string
+	Phone string
+}
 
 func main() {
+	session, err := mgo.Dial("server1.example.com,localhost")
+	if err != nil {
+		panic(err)
+	}
+	defer session.Close()
 
-	client, err := as.NewClient("127.0.0.1", 3000)
+	// Optional. Switch the session to a monotonic behavior.
+	session.SetMode(mgo.Monotonic, true)
 
-	// key, err := as.NewKey("namespace", "set",
-	// "key value goes here and can be any supported primitive")
+	c := session.DB("test").C("people")
+	err = c.Insert(&Person{"Ale", "+55 53 8116 9639"},
+		&Person{"Cla", "+55 53 8402 8510"})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	policy := as.NewWritePolicy(0, 0)
-	policy.Timeout = 50 * time.Millisecond
+	result := Person{}
+	err = c.Find(bson.M{"name": "Ale"}).One(&result)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	key2, _ := as.NewKey("test", "myset", "mykey")
-	bin := as.NewBin("mybin", "myvalue")
-
-	fmt.Println("bin is ", bin)
-
-	// client.PutBins(policy, key2, bin)
-
-	// bin1 := as.NewBin("bin1", "value1")
-	// bin2 := as.NewBin("bin2", "value2")
-
-	// Write a record
-	// err = client.PutBins(nil, key, bin1, bin2)
-
-	// Read a record
-	record, err := client.Get(nil, key2)
-
-	fmt.Println("record and error: ", record, err)
-	client.Close()
-
+	fmt.Println("Phone:", result.Phone)
 }
