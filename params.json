@@ -1,0 +1,6 @@
+{
+  "name": "Go-bat",
+  "tagline": "Basic implementation of a browser based cricket simulation game",
+  "body": "### Infrastructure\r\n* The frontend will be implemented using AngularJS 2.0 and styled with Bootstrap.\r\n* The backend server will be done with Go.  The backend will be responsible for the interface with the DB, and will execute algorithms to generate game results.\r\n* The database will be MongoDB (https://godoc.org/gopkg.in/mgo.v2).\r\n\r\n### Planned Features\r\nThe following features are planned for the initial version:\r\n\r\n1. Public home screen\r\n2. User login screen, with basic authentication\r\n3. Random team assigned to new users\r\n4. Random players stats\r\n5. Interface allows viewing of teams, nets and fixtures\r\n6. Allow editing and saving of nets\r\n7. Simulate basic games (no commentary, only results)\r\n8. Basic user maintenance (update user fields)",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
