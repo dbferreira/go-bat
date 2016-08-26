@@ -1,5 +1,6 @@
 # go-bat
 Basic implementation of a browser based cricket simulation game in Go and AngularJS 2.0
+
 Front-end Angular2 code: https://github.com/dbferreira/go-bat-www
 
 ## Infrastructure
