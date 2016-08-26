@@ -24,15 +24,18 @@ func HandleTask() {
 	defer teamTaskFB.StopWatching()
 
 	for teamTaskEvent := range teamsEvent {
+		data := teamTaskEvent.Data
 		log.Println("Event Received")
 		log.Printf("Type: %s\n", teamTaskEvent.Type)
 		log.Printf("Path: %s\n", teamTaskEvent.Path)
 		log.Printf("Data: %v\n", teamTaskEvent.Data)
-		if teamTaskEvent.Data != nil {
-
+		if data != nil {
 			dataMaps := teamTaskEvent.Data.(map[string]interface{})
+			log.Println("DataMaps = ", dataMaps)
 			for taskKey := range dataMaps {
 				teamTask := dataMaps[taskKey].(map[string]interface{})
+
+				log.Println("teamTask = ", teamTask)
 				newTeam, err := createTeam(taskKey)
 				if err != nil {
 					log.Println("Error, could not create team")
