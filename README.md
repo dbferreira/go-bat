@@ -26,3 +26,5 @@ The following features are planned for the initial version:
 * Back-end to listen on that location for new tasks and perform transaction
 * Back-end to push to new location on Firebase on complete
 * Front-end to listen for changes on the processed state data location
+
+Sanichat is a nice example of how it works (Node.js) -> https://github.com/mcdonamp/sanichat
