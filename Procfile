@@ -1,1 +1,1 @@
-worker: go/bin/go run cmd/main.go
+worker: go-bat
