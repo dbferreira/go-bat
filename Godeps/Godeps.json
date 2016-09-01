@@ -1,0 +1,12 @@
+{
+	"ImportPath": "github.com/dbferreira/go-bat",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v74",
+	"Deps": [
+		{
+			"ImportPath": "github.com/zabawaba99/firego",
+			"Comment": "v1-32-g2e2d788",
+			"Rev": "2e2d788dd1f1357c4408b082eef420b4cfbf2fba"
+		}
+	]
+}
