@@ -28,3 +28,10 @@ The following features are planned for the initial version:
 * Front-end to listen for changes on the processed state data location
 
 Sanichat is a nice example of how it works (Node.js) -> https://github.com/mcdonamp/sanichat
+
+# Building
+
+`go get github.com/dbferreira/go-bat`
+
+`go run main.go`
+
